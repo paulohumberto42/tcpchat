@@ -99,11 +99,7 @@ namespace TcpChat.Tests.Server.Processors
             processor.HandleMessage(senderUser.Username, message);
 
             // Assert
-            Assert.Equal(
-                1,
-                messageSenderService
-                .ReceivedCalls()
-                .Count(p => p.GetMethodInfo().Name == nameof(IMessageSenderService.SendMessageToUser)));
+            messageSenderService.Received(1).SendMessageToUser(recipientUser.Username, Arg.Any<DirectMessageResponse>());
         }
     }
 }
