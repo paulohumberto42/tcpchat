@@ -101,7 +101,7 @@ namespace TcpChat.Client.UI
         private void DisplayMessageToOther(DirectMessageResponse directMessage)
         {
             Console.WriteLineFormatted(
-                "{0} whispers to {1}: {2}",
+                "{0} to {1}: {2}",
                 Color.Gray,
                 new Formatter(directMessage.Sender, Color.LimeGreen),
                 new Formatter(directMessage.Recipient, Color.LimeGreen),
